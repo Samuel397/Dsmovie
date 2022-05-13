@@ -49,9 +49,15 @@ function Listing() {
      */
 
      //o atributo key é uma exigencia do React qunando se vai fazer uma renderizção dinamica de coleção
-    return (
+    
+    
+    const handlePageChange = (newPageNumber : number ) =>{
+        setPageNumber(newPageNumber);
+    }
+    
+     return (
         <>
-            <Pagination />
+            <Pagination page={page} onChange ={handlePageChange}/>
             <div className="container">
                 <div className="row">
                     {page.content.map(movie => (
